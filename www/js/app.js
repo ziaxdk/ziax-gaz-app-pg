@@ -1,8 +1,8 @@
 angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.controllers', 'ziaxgazapp.services', 'ziaxgazapp.directives']).
 
 constant('FINALS', {
-  host: 'http://host.ziax.dk:8081/'
-  // host: 'https://s.ziax.dk/'
+  // host: 'http://host.ziax.dk:8081/'
+  host: 'https://s.ziax.dk/'
 })
 
 .run(['$ionicPlatform', '$rootScope', '$state', '$timeout', 'User', 'Hardware', 'GPS', 'FINALS',
