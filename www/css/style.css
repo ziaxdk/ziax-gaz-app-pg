@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+.zTouchRelease {
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+
+  background-color: #4a87ee;
+  color: white;
+}
+
+form.ngx-attempt .ng-invalid {
+  border-bottom: 1px solid red;
+}

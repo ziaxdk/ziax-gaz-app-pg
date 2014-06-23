@@ -1,0 +1,45 @@
+<ion-view title="New">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <form name="theForm" ng-controller="NewCtrl" ngx-submit="submit()" ngx-submit-clear="{{created}}" novalidate>
+      <div class="list">
+        <div class="item item-input item-select">
+          <div class="input-label">Vehicle</div>
+          <select ng-model="form.vehicle" ng-options="vehicle.id as (vehicle.source.vendor + ' ' + vehicle.source.model) for vehicle in vehicles" required></select>
+        </div>
+
+        <div class="item item-input">
+          <div class="input-label">Purchase date</div>
+          <input ng-model="form.purchaseDateUtc" type="date" required />
+        </div>
+        <label class="item item-input">
+          <div class="input-label">Odometer</div>
+          <input ng-model="form.odometer" type="number" required />
+        </label>
+        <label class="item item-input">
+          <div class="input-label">Price</div>
+          <input ng-model="form.price" type="number" required />
+        </label>
+        <label class="item item-input">
+          <div class="input-label">Units</div>
+          <input ng-model="form.units" type="number" required />
+        </label>
+
+        <div class="item item-input item-select">
+          <div class="input-label">Station</div>
+          <select ng-model="form.station" ng-options="station.id as station.display for station in stations" required></select>
+        </div>
+
+      </div>
+      <div class="padding">
+        <button class="button button-block" ng-class="{ 'button-positive': !created, 'button-balanced': created, 'button-assertive': failed }">
+          <i class="icon ion-ios7-plus-empty"></i> Create
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+
+
