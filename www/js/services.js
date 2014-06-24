@@ -23,8 +23,13 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
   };
 })
 
-.service('Rest', ['$http', 'User', 'FINALS', function($http, User, FINALS) {
+.service('Rest', ['$http', 'User', 'Hardware', 'FINALS', function($http, User, Hardware, FINALS) {
   var _host = FINALS.host;
+
+  function feel(res) {
+    Hardware.vibrate(500);
+    return res;
+  }
 
   this.testv4 = function() {
     return $http.post(_host + 'v4', { x: 1, y: 2 });
@@ -42,13 +47,13 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
     return $http.post(_host + 'api/stations_near', { lat: lat, lon: lon });
   };
   this.store = function(gaz) {
-    return $http.post(_host + 'api/document2', gaz);
+    return $http.post(_host + 'api/document2', gaz).success(feel);
   };
   this.list = function(offset) {
     return $http.get(_host + 'api/gaz/list', { params: { offset: offset } });
   };
   this.remove = function(es) {
-    return $http.delete(_host + 'api/gaz', { params: es });
+    return $http.delete(_host + 'api/gaz', { params: es }).success(feel);
   };
 }])
 
@@ -56,6 +61,8 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
   this.vibrate = function(timeMs) {
     if (window.navigator && window.navigator.notification && window.navigator.notification.vibrate) {
       window.navigator.notification.vibrate(200);
+    } else {
+      console.log('vibrating for', timeMs);
     }
   };
 }]);

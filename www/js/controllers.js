@@ -59,7 +59,6 @@ angular.module('ziaxgazapp.controllers', ['ziaxgazapp.services'])
 
     // console.log($scope.form, $scope.theForm);
     Rest.store($scope.form).then(function() {
-      Hardware.vibrate(500);
       $scope.created = true;
       init();
       setDefaults();
