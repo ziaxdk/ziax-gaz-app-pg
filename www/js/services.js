@@ -1,4 +1,4 @@
-angular.module('ziaxgazapp.services', [])
+angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
 
 .service('User', function($window) {
   this.get = function() {
@@ -36,6 +36,7 @@ angular.module('ziaxgazapp.services', [])
   };
   this.authorize = function(uid, lastname) {
     return $http.post(_host + 'api/appauth', { uid: uid, lastname: lastname });
+    // return $http.post('http://host.ziax.dk:8081/api/appauth', { uid: uid, lastname: lastname });
   };
   this.stationsNear = function(lat, lon) {
     return $http.post(_host + 'api/stations_near', { lat: lat, lon: lon });
@@ -45,7 +46,10 @@ angular.module('ziaxgazapp.services', [])
   };
   this.list = function(offset) {
     return $http.get(_host + 'api/gaz/list', { params: { offset: offset } });
-  }
+  };
+  this.remove = function(es) {
+    return $http.delete(_host + 'api/gaz', { params: es });
+  };
 }])
 
 .service('Hardware', [function() {

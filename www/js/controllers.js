@@ -4,6 +4,7 @@ angular.module('ziaxgazapp.controllers', ['ziaxgazapp.services'])
   // console.log('enter LoginCtrl');
   $scope.user = {};
   $scope.signIn = function (user) {
+    // console.log('signIn', user);
     Rest.authorize(user.email, user.password)
       .success(function(theUser) {
         User.store(theUser);
@@ -100,6 +101,14 @@ angular.module('ziaxgazapp.controllers', ['ziaxgazapp.services'])
       // console.log('offset', offset, 'scope data', $scope.data.length, 'data', data.data.hits.hits);
     }, function(err) {
       console.log('err', err);
+    });
+  };
+
+  $scope.remove = function(hit) {
+    Rest.remove({ id: hit.id, type: 'gaz' }).success(function() {
+      _.remove($scope.data, function(item) {
+        return item.id === hit.id;
+      });
     });
   };
 })
