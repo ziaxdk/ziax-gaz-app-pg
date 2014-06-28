@@ -147,6 +147,16 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
     })
 
 
+    .state('app.place', {
+      url: "/place",
+      views: {
+        'menuContent' :{
+          templateUrl: "tmpl/place.html",
+          controller: 'PlaceCtrl',
+        }
+      }
+    })
+
     .state('app.settings', {
       url: "/settings",
       views: {

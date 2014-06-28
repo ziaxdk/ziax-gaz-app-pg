@@ -76,7 +76,7 @@
       // priority: 1000,
       controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
         var t = this,
-            map = L.map($element[0], { center: [0, 0], zoom: 12 }),
+            map = L.map($element[0], { center: [0, 0], zoom: 12, zoomControl: false, attributionControl: false }),
             base0 = L.tileLayer('https://{s}.tiles.mapbox.com/v3/ziaxdk.h6efc5a4/{z}/{x}/{y}.png', { attribution: '' }).addTo(map),
             base2 = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '' }),
             // base3 = L.bingLayer("Alv2HutsIUPb_D2Jz0KdN37XixBdCph40lz8uMUNyUM2yp3IPg0oaiHn-J0ieMU4");
