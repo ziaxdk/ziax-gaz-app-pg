@@ -6,6 +6,13 @@
   background-color: #4a87ee;
   color: white;
 }
+.ll-map {
+  width: 100%;
+  height: 100%;
+}
+.scroll {
+  height: 100%;
+}
 
 form.ngx-attempt .ng-invalid {
   border-bottom: 1px solid red;

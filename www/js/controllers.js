@@ -110,6 +110,14 @@ angular.module('ziaxgazapp.controllers', ['ziaxgazapp.services'])
       });
     });
   };
+
+})
+.controller('HistoryDetailCtrl', function($rootScope, $scope, Gaz) {
+  $scope.gaz = Gaz.data;
+  if (Gaz.data && Gaz.data.source && Gaz.data.source.station && Gaz.data.source.station.location) {
+    $scope.location = Gaz.data.source.station.location;
+    // console.log('a');
+  }
 })
 
 .controller('SettingsCtrl', function($rootScope, $scope, User) {

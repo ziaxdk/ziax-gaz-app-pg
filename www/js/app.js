@@ -95,12 +95,12 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
 
     .state('logout', {
       url: '/logout',
-      controller: 'LogoutCtrl',
-      resolve: {
-        logout: function(User) {
-          console.log('resolve', User);
-        }
-      }
+      controller: 'LogoutCtrl'
+      // resolve: {
+      //   logout: function(User) {
+      //     console.log('resolve', User);
+      //   }
+      // }
     })
 
     .state('app', {
@@ -120,6 +120,7 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
         }
       }
     })
+
     .state('app.history', {
       url: "/history",
       views: {
@@ -132,6 +133,20 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
         }
       }
     })
+    .state('app.historydetail', {
+      url: "/history/:id",
+      views: {
+        'menuContent' :{
+          templateUrl: "tmpl/historydetail.html",
+          controller: 'HistoryDetailCtrl',
+          resolve: {
+            Gaz: function($stateParams, Rest) { return Rest.gaz($stateParams.id); }
+          }
+        }
+      }
+    })
+
+
     .state('app.settings', {
       url: "/settings",
       views: {

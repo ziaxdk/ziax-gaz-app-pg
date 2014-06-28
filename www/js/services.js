@@ -12,7 +12,7 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
 
   this.create = function(user) {
     if (!user) throw new Error("no user");
-    angular.extend(user, { settings: { closeWindowNewProduct: true, slideLeftTransfer: true, slideRightBuy: true } });
+    angular.extend(user, { settings: { } });
     return user;
   };
   this.store = function(user) {
@@ -51,6 +51,9 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
   };
   this.list = function(offset) {
     return $http.get(_host + 'api/gaz/list', { params: { offset: offset } });
+  };
+  this.gaz = function(id) {
+    return $http.get(_host + 'api/gaz', { params: { id: id } });
   };
   this.remove = function(es) {
     return $http.delete(_host + 'api/gaz', { params: es }).success(feel);

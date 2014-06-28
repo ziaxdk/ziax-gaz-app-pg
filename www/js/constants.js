@@ -1,7 +1,7 @@
 angular.module("ziaxgazapp.constants", [])
 
 .constant("FINALS", {
-	"host": "https://s.ziax.dk/"
+	"host": "http://host.ziax.dk:8081/"
 })
 
 ;

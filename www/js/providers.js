@@ -25,7 +25,8 @@ angular.module('ziaxgazapp.providers', [])
       watchId = window.navigator.geolocation.watchPosition(function(position) {
         update(position.coords);
       }, function(err) {
-        alert(err);
+        console.log('GPS err', err);
+        // alert(err);
       }, {
         maximumAge: 10,
         timeout: 90000,
