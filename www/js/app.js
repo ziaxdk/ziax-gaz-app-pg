@@ -36,21 +36,42 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
   // });
 
   $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromstate, fromParams) {
-    if ($rootScope.user && toState.name == 'login') {
-      // console.log('$stateChangeStart', toState);
-      // evt.preventDefault();
-      $timeout(function() {
-        $state.go('app.new', {}, { notify: true });
-      }, 1);
+    console.log('toState', toState, toParams);
+    // When unauthorized...
+    if (!$rootScope.user && "login logout".indexOf(toState.name) == -1) {
+      evt.preventDefault();
+      $state.go('login', {}, { notify: true });
       return;
     }
 
-    if (!$rootScope.user && "login logout".indexOf($state.current.name) != -1) {
-      $timeout(function() {
-        $state.go('login', {}, { notify: true });
-      }, 1);
+    // When authorized...
+    if ($rootScope.user && toState.name == 'login') {
+      evt.preventDefault();
+      // console.log('auth');
+      $state.go('app.new', {}, { notify: true });
       return;
     }
+
+    // if ($rootScope.user && toState.name == 'login') {
+    //   console.log('$stateChangeStart-1', toState);
+    //   evt.preventDefault();
+    //   // $timeout(function() {
+    //   //   $state.go('app.new', {}, { notify: true });
+    //   // }, 1);
+    //   $state.go('app.new', {}, { notify: true });
+    //   return;
+    // }
+
+    // if (!$rootScope.user && "login logout".indexOf($state.current.name) != -1) {
+    //   console.log('$stateChangeStart-2', $state.current.name);
+    //   evt.preventDefault();
+    //   $state.go('login', {}, { notify: true });
+    //   // $state.go('login');
+    //   // $timeout(function() {
+    //   //   // $state.go('login', {}, { notify: true });
+    //   // }, 1);
+    //   return;
+    // }
   });
 
   Array.prototype.spliceRem = function(cb) {
@@ -72,7 +93,7 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
 
     $httpProvider.interceptors.push(function($q, User) {
       return {
-       request: function(config) {
+        request: function(config) {
           var u = User.get(),
               url = config.url;
           if (u && (url.indexOf('/v4') !== -1 || url.indexOf('/api') !== -1)) {

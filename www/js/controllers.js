@@ -9,13 +9,13 @@ angular.module('ziaxgazapp.controllers', ['ziaxgazapp.services'])
       .success(function(theUser) {
         User.store(theUser);
         $rootScope.user = theUser;
-        $state.go('app.new', {}, { notify: true });
+        // $state.go('app.new', {}, { notify: true });
+        $state.go('app.new');
       });
   };
 })
 
 .controller('NewCtrl', function($rootScope, $scope, $ionicModal, $filter, Rest, Hardware, User) {
-  console.log('enter NewCtrl');
   init();
   // console.log(User.get());
   // Rest.vehicles().success(function(data) {
