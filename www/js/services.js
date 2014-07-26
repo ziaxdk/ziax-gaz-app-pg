@@ -60,6 +60,14 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
   };
 }])
 
+// .service('RestOffline', ['$q', function($q) {
+//   this.list = function() {
+//     var defer = $q();
+//     defer.reject('RestOffline');
+//     return defer.promise;
+//   };
+// }])
+
 .service('Hardware', [function() {
   this.vibrate = function(timeMs) {
     if (window.navigator && window.navigator.notification && window.navigator.notification.vibrate) {
@@ -67,5 +75,11 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
     } else {
       console.log('vibrating for', timeMs);
     }
+  };
+  this.isOnline = function() {
+    return false;
+    if (!window.navigator || !window.navigator.connection) return true;
+    var networkState = navigator.connection.type;
+    return networkState !== Connection.UNKNOWN && networkState !== Connection.NONE;
   };
 }]);

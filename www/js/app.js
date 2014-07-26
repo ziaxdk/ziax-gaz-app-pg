@@ -36,7 +36,7 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
   // });
 
   $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromstate, fromParams) {
-    console.log('toState', toState, toParams);
+    // console.log('toState', toState, toParams);
     // When unauthorized...
     if (!$rootScope.user && "login logout".indexOf(toState.name) == -1) {
       evt.preventDefault();
@@ -85,11 +85,37 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
   };
 }])
 
-.config(['$stateProvider', '$urlRouterProvider', 'GPSProvider', '$httpProvider',
-  function($stateProvider, $urlRouterProvider, GPSProvider, $httpProvider) {
+.config(['$stateProvider', '$urlRouterProvider', 'GPSProvider', '$httpProvider', '$provide',
+  function($stateProvider, $urlRouterProvider, GPSProvider, $httpProvider , $provide) {
 
     GPSProvider.rootScopeVariable('position');
     GPSProvider.intervalVariable(10000);
+
+    // $provide.decorator('Rest', function($delegate, $timeout, Hardware, RestOffline) {
+    //   // var rejectedPromise = function() {
+    //   //   console.log('rejectedPromise');
+    //   //   var defer = $q();
+    //   //   // $timeout(function() {
+    //   //     defer.reject('offline');
+    //   //   // }, 1000);
+    //   //   return defer.promise;
+    //   // };
+
+    //   // console.log(_.functions($delegate));
+    //   // var dummy = {
+    //   //   list: function() {
+    //   //     // var defer = $q();
+    //   //     // console.log(rejectedPromise());
+    //   //     return { data: { hits: { hits: '' } } };
+    //   //   }
+    //   // };
+
+    //   // return $delegate;
+    //   // return RestOffline;
+    //   // return rejectedPromise();
+    //   // return RestOffline;
+    //   return $delegate;
+    // });
 
     $httpProvider.interceptors.push(function($q, User) {
       return {
@@ -149,7 +175,7 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
           templateUrl: "tmpl/history.html",
           controller: 'HistoryCtrl',
           resolve: {
-            Data: function(Rest) { return Rest.list(); }
+            Data: function(Rest) { /*return Rest.list();*/ var list = Rest.list(); console.log('listapp', list); return list; }
           }
         }
       }

@@ -86,6 +86,7 @@ angular.module('ziaxgazapp.controllers', ['ziaxgazapp.services'])
 })
 
 .controller('HistoryCtrl', function($rootScope, $scope, User, Data, Rest) {
+  console.log('HistoryCtrl');
   var offset = 0;
   $scope.data = Data.data.hits.hits;
   $scope.total = Data.data.hits.total;
