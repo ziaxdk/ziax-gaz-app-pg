@@ -40,19 +40,11 @@
     <!-- <preference name="StatusBarBackgroundColor" value="#000000" /> -->
     <preference name="StatusBarStyle" value="lightcontent" />
     <!-- <preference name="StatusBarOverlaysWebView" value="True" />  --> <!-- Does not work -->
+    <!-- <preference name="UIWebViewBounce" value="false" /> -->
+    <!-- <preference name="DisallowOverscroll" value="true" /> -->
+
     <!-- Plugins -->
     <gap:plugin name="com.phonegap.plugin.statusbar" />
-<!--     <gap:config-file platform="ios" parent="UIStatusBarHidden">
-        <true/>
-    </gap:config-file>
- -->     
-<!--     <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
-        <false/>
-    </gap:config-file>
- -->
-    <!-- <preference name="webviewbounce" value="false" /> -->
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
 
     <!-- <gap:plugin name="org.apache.cordova.statusbar" /> -->
         <!-- Core plugins -->
@@ -67,7 +59,8 @@
     <!-- <gap:plugin name="org.apache.cordova.dialogs" /> -->
     <!-- <gap:plugin name="org.apache.cordova.file" /> -->
     <!-- <gap:plugin name="org.apache.cordova.file-transfer" /> -->
-    <gap:plugin name="org.apache.cordova.geolocation" />
+    <!-- <gap:plugin name="org.apache.cordova.geolocation" /> -->
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
     <!-- <gap:plugin name="org.apache.cordova.globalization" /> -->
     <!-- <gap:plugin name="org.apache.cordova.inappbrowser" /> -->
     <!-- <gap:plugin name="org.apache.cordova.media" /> -->
