@@ -10,7 +10,6 @@ angular.module('ziaxgazapp', [
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
 
   $ionicPlatform.ready(function() {
-    alert('ready');
     console.log('ionicPlatform ready.');
     if(window.StatusBar) {
       StatusBar.styleDefault();
