@@ -10,13 +10,13 @@ angular.module('ziaxgazapp', [
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
 
   $ionicPlatform.ready(function() {
+    Hardware.vibrate(200);
     console.log('ionicPlatform ready.');
-    // if(window.StatusBar) {
-    //   StatusBar.styleDefault();
-    // }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
     
     console.log('Using host', FINALS.host);
-    Hardware.vibrate(200);
     
     document.addEventListener("pause", function () {
       console.log('Pause');
