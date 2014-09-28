@@ -11,9 +11,9 @@ angular.module('ziaxgazapp', [
 
   $ionicPlatform.ready(function() {
     console.log('ionicPlatform ready.');
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
+    // if(window.StatusBar) {
+    //   StatusBar.styleDefault();
+    // }
     
     console.log('Using host', FINALS.host);
     Hardware.vibrate(200);
