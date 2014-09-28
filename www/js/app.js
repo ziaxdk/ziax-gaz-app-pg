@@ -10,6 +10,8 @@ angular.module('ziaxgazapp', [
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
 
   $ionicPlatform.ready(function() {
+    GPS.reset();
+    GPS.startGps();
     Hardware.vibrate(200);
     console.log('ionicPlatform ready.');
     if(StatusBar && StatusBar.overlaysWebView) {
@@ -30,9 +32,7 @@ angular.module('ziaxgazapp', [
     document.addEventListener("backbutton", function () {
       console.log('backbutton');
     }, false);
-    GPS.reset();
-    GPS.startGps();
-
+    alert('completed');
   });
   $rootScope.user = User.get();
 
