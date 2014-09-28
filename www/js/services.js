@@ -70,11 +70,7 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
 
 .service('Hardware', [function() {
   this.vibrate = function(timeMs) {
-    if (window.navigator && window.navigator.notification && window.navigator.notification.vibrate) {
-      window.navigator.notification.vibrate(200);
-    } else {
-      console.log('vibrating for', timeMs);
-    }
+    navigator.notification.vibrate(200);
   };
   this.isOnline = function() {
     return false;
