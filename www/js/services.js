@@ -74,7 +74,7 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
     if (navigator && navigator.notification && navigator.notification.vibrate) {
       navigator.notification.vibrate(200);
     } else {
-      alert('vibrate');
+      // alert('vibrate');
       console.log('vibrating for', timeMs);
     }
   };
