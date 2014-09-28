@@ -1,9 +1,19 @@
-angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.controllers', 'ziaxgazapp.services', 'ziaxgazapp.directives', 'ziaxgazapp.constants'])
+angular.module('ziaxgazapp', [
+  'ionic',
+  'ziaxgazapp.providers',
+  'ziaxgazapp.controllers',
+  'ziaxgazapp.services',
+  'ziaxgazapp.directives',
+  'ziaxgazapp.constants'])
 
 .run(['$ionicPlatform', '$rootScope', '$state', '$timeout', 'User', 'Hardware', 'GPS', 'FINALS',
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
 
   $ionicPlatform.ready(function() {
+    GPS.reset();
+    GPS.startGps();
+
+    $rootScope.user = User.get();
     console.log('ionicPlatform ready.');
     if(window.StatusBar) {
       StatusBar.styleDefault();
@@ -25,11 +35,6 @@ angular.module('ziaxgazapp', ['ionic', 'ziaxgazapp.providers', 'ziaxgazapp.contr
       console.log('backbutton');
     }, false);
   });
-  GPS.reset();
-  GPS.startGps();
-
-
-  $rootScope.user = User.get();
 
   // $rootScope.$on('$stateChangeError', function() {
   //   console.log('$stateChangeError', arguments);
