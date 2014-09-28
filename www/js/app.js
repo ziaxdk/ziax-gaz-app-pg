@@ -10,6 +10,8 @@ angular.module('ziaxgazapp', [
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
 
   $ionicPlatform.ready(function() {
+    alert(nagivator);
+    alert(nagivator.userAgent);
     Hardware.vibrate(200);
     console.log('ionicPlatform ready.');
     if(StatusBar) {
