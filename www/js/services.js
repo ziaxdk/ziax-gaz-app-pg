@@ -44,6 +44,7 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
     // return $http.post('http://host.ziax.dk:8081/api/appauth', { uid: uid, lastname: lastname });
   };
   this.stationsNear = function(lat, lon) {
+    alert(lat + ',' + lon);
     return $http.post(_host + 'api/stations_near', { lat: lat, lon: lon });
   };
   this.store = function(gaz) {
@@ -70,8 +71,8 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
 
 .service('Hardware', [function() {
   this.vibrate = function(timeMs) {
-    if (window.navigator && window.navigator.notification && window.navigator.notification.vibrate) {
-      window.navigator.notification.vibrate(200);
+    if (navigator && navigator.notification && navigator.notification.vibrate) {
+      navigator.notification.vibrate(200);
     } else {
       alert('vibrate');
       console.log('vibrating for', timeMs);
