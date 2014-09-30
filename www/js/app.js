@@ -10,6 +10,8 @@ angular.module('ziaxgazapp', [
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
 
   $ionicPlatform.ready(function() {
+    alert(StatusBar);
+    alert(window.StatusBar);
     if(StatusBar && StatusBar.overlaysWebView) {
       alert('StatusBar');
       StatusBar.overlaysWebView(true);
