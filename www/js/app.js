@@ -21,7 +21,7 @@ angular.module('ziaxgazapp', [
 
   $ionicPlatform.ready(function() {
     safeFn(function() { navigator.vibrate(500); });
-    safeFn(function() { StatusBar.overlaysWebView(true); alert('ok'); });
+    safeFn(function() { StatusBar.overlaysWebView(true); });
 
     return;
     alert('run2');

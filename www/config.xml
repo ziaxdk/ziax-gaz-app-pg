@@ -38,10 +38,10 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- <preference name="StatusBarBackgroundColor" value="#000000" /> -->
-    <preference name="StatusBarStyle" value="lightcontent" />
+    <!-- <preference name="StatusBarStyle" value="lightcontent" /> -->
     <!-- <preference name="StatusBarOverlaysWebView" value="True" />  --> <!-- Does not work -->
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
+    <!-- <preference name="UIWebViewBounce" value="false" /> -->
+    <!-- <preference name="DisallowOverscroll" value="true" /> -->
 
     <!-- Plugins -->
     <gap:plugin name="com.phonegap.plugin.statusbar" />
