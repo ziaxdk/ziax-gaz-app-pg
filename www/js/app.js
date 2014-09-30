@@ -11,11 +11,9 @@ angular.module('ziaxgazapp', [
     alert('run1');
   $ionicPlatform.ready(function() {
     alert('run2');
-    alert(window.StatusBar);
-    alert(StatusBar);
-    if(StatusBar && StatusBar.overlaysWebView) {
+    if(window.StatusBar && window.StatusBar.overlaysWebView) {
       alert('StatusBar');
-      StatusBar.overlaysWebView(true);
+      window.StatusBar.overlaysWebView(true);
     }
     return;
     GPS.reset();
