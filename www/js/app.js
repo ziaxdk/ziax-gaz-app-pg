@@ -13,6 +13,7 @@ angular.module('ziaxgazapp', [
       fn();
     }
     catch(e) {
+      alert(e.message);
       console.log('safe', e.message);
     }
   };
