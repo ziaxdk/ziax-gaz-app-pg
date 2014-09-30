@@ -11,6 +11,7 @@ angular.module('ziaxgazapp', [
     alert('run1');
   $ionicPlatform.ready(function() {
     alert('run2');
+    Hardware.vibrate(200);
     if(window.StatusBar && window.StatusBar.overlaysWebView) {
       alert('StatusBar');
       window.StatusBar.overlaysWebView(true);
@@ -18,7 +19,6 @@ angular.module('ziaxgazapp', [
     return;
     GPS.reset();
     GPS.startGps();
-    Hardware.vibrate(200);
     console.log('ionicPlatform ready.');
     
     console.log('Using host', FINALS.host);
@@ -37,7 +37,6 @@ angular.module('ziaxgazapp', [
     }, false);
     alert('completed');
   });
-  return;
   $rootScope.user = User.get();
 
   // $rootScope.$on('$stateChangeError', function() {
