@@ -23,6 +23,8 @@ angular.module('ziaxgazapp', [
     safeFn(function() { navigator.vibrate(500); });
     safeFn(function() { StatusBar.overlaysWebView(true); StatusBar.styleDefault(); StatusBar.show(); });
 
+    GPS.reset();
+    GPS.startGps();
     return;
     console.log('ionicPlatform ready.');
     
@@ -42,8 +44,6 @@ angular.module('ziaxgazapp', [
     }, false);
     alert('completed');
   });
-    GPS.reset();
-    GPS.startGps();
   $rootScope.user = User.get();
 
   // $rootScope.$on('$stateChangeError', function() {
