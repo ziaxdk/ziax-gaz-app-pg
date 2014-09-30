@@ -72,10 +72,9 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
 .service('Hardware', [function() {
   this.vibrate = function(timeMs) {
     alert(navigator);
-    alert(navigator.notification);
-    alert(navigator.notification.vibrate);
-    if (navigator && navigator.notification && navigator.notification.vibrate) {
-      navigator.notification.vibrate(200);
+    alert(navigator.vibrate);
+    if (navigator && navigator.vibrate) {
+      navigator.vibrate(200);
     } else {
       // alert('vibrate');
       console.log('vibrating for', timeMs);
