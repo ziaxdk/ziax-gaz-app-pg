@@ -23,16 +23,9 @@ angular.module('ziaxgazapp', [
     safeFn(function() { navigator.vibrate(500); });
     safeFn(function() { StatusBar.overlaysWebView(true); StatusBar.styleDefault(); StatusBar.show(); });
 
-    return;
-    alert('run2');
-    Hardware.vibrate(200);
-    if(window.StatusBar && window.StatusBar.overlaysWebView) {
-      alert('StatusBar');
-      window.StatusBar.overlaysWebView(true);
-    }
-    return;
     GPS.reset();
     GPS.startGps();
+    return;
     console.log('ionicPlatform ready.');
     
     console.log('Using host', FINALS.host);
