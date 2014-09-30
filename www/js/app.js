@@ -10,13 +10,15 @@ angular.module('ziaxgazapp', [
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
 
   $ionicPlatform.ready(function() {
+    if(StatusBar && StatusBar.overlaysWebView) {
+      alert('StatusBar');
+      StatusBar.overlaysWebView(true);
+    }
+    return;
     GPS.reset();
     GPS.startGps();
     Hardware.vibrate(200);
     console.log('ionicPlatform ready.');
-    // if(StatusBar && StatusBar.overlaysWebView) {
-    //   StatusBar.overlaysWebView(true);
-    // }
     
     console.log('Using host', FINALS.host);
     
