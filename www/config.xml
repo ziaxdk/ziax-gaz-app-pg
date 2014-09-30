@@ -43,10 +43,17 @@
     <!-- <preference name="UIWebViewBounce" value="false" /> -->
     <!-- <preference name="DisallowOverscroll" value="true" /> -->
 
-    <gap:config-file platform="ios" parent="NSLocationWhenInUseUsageDescription" overwrite="true">
-        <string>Your message goes here2</string>
+    <preference name="NSLocationAlwaysUsageDescription" value="true1" />
+    <preference name="NSLocationWhenInUseUsageDescription" value="true2" />
+
+<!--     <gap:config-file platform="ios" parent="NSLocationAlwaysUsageDescription">
+        <string>Your message goes here1</string>
     </gap:config-file>
 
+    <gap:config-file platform="ios" parent="NSLocationWhenInUseUsageDescription">
+        <string>Your message goes here2</string>
+    </gap:config-file>
+ -->
 
 
 
