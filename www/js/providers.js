@@ -22,7 +22,7 @@ angular.module('ziaxgazapp.providers', [])
       $rootScope[_rootScopeName] = { hasFix: false };
       intervalId = $interval(function() { updated = false; }, _intervalMilli || 5000);
 
-      watchId = window.navigator.geolocation.watchPosition(function(position) {
+      watchId = navigator.geolocation.watchPosition(function(position) {
         update(position.coords);
       }, function(err) {
         console.log('GPS err', err);
@@ -38,7 +38,7 @@ angular.module('ziaxgazapp.providers', [])
     function stopGps() {
       console.log('Stopping GPS');
       if (!watchId) return;
-      window.navigator.geolocation.clearWatch(watchId);
+      navigator.geolocation.clearWatch(watchId);
       watchId = undefined;
       $interval.cancel(intervalId);
       intervalId = undefined;
