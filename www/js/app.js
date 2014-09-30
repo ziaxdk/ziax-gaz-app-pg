@@ -24,7 +24,7 @@ angular.module('ziaxgazapp', [
     safeFn(function() { StatusBar.overlaysWebView(true); StatusBar.styleDefault(); StatusBar.show(); });
 
 
-    var watchId = navigator.geolocation.watchPosition(function() { alert('ok'); },function() { alert('err'); }, { maximumAge: 10, timeout: 60000, enableHighAccuracy: true });
+    var watchId = navigator.geolocation.watchPosition(function(d) { alert('ok'); console.log(d);  },function(e) { alert('err'); console.log(e); }, { maximumAge: 1000, timeout: 60000, enableHighAccuracy: true });
 
 
     // GPS.reset();
