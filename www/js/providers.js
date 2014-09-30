@@ -26,7 +26,7 @@ angular.module('ziaxgazapp.providers', [])
         update(position.coords);
       }, function(err) {
         console.log('GPS err', err);
-        alert(err);
+        // alert(err);
       }, {
         maximumAge: 10,
         timeout: 90000,
