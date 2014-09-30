@@ -8,8 +8,22 @@ angular.module('ziaxgazapp', [
 
 .run(['$ionicPlatform', '$rootScope', '$state', '$timeout', 'User', 'Hardware', 'GPS', 'FINALS',
   function($ionicPlatform, $rootScope, $state, $timeout, User, Hardware, GPS, FINALS) {
-    alert('run1');
+  var safeFn = function(fn) {
+    try {
+      fn();
+    }
+    catch(e) {
+      console.log('safe', e.message);
+    }
+  };
+
+
   $ionicPlatform.ready(function() {
+    safeFn(function() {
+      navigator.vibrate(500);
+    });
+
+    return;
     alert('run2');
     Hardware.vibrate(200);
     if(window.StatusBar && window.StatusBar.overlaysWebView) {
@@ -37,6 +51,7 @@ angular.module('ziaxgazapp', [
     }, false);
     alert('completed');
   });
+  return;
   $rootScope.user = User.get();
 
   // $rootScope.$on('$stateChangeError', function() {
