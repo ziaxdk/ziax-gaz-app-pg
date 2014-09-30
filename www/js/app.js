@@ -163,79 +163,79 @@ angular.module('ziaxgazapp', [
       controller: 'LoginCtrl'
     })
 
-    // .state('logout', {
-    //   url: '/logout',
-    //   controller: 'LogoutCtrl'
-    //   // resolve: {
-    //   //   logout: function(User) {
-    //   //     console.log('resolve', User);
-    //   //   }
-    //   // }
-    // })
+    .state('logout', {
+      url: '/logout',
+      controller: 'LogoutCtrl'
+      // resolve: {
+      //   logout: function(User) {
+      //     console.log('resolve', User);
+      //   }
+      // }
+    })
 
-    // .state('app', {
-    //   data: { protected: true },
-    //   url: "/app",
-    //   abstract: true,
-    //   templateUrl: "tmpl/menu.html"
-    //   // controller: 'AppCtrl'
-    // })
+    .state('app', {
+      data: { protected: true },
+      url: "/app",
+      abstract: true,
+      templateUrl: "tmpl/menu.html"
+      // controller: 'AppCtrl'
+    })
 
-    // .state('app.new', {
-    //   url: "/new",
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: "tmpl/new.html",
-    //       // controller: 'NewCtrl'
-    //     }
-    //   }
-    // })
+    .state('app.new', {
+      url: "/new",
+      views: {
+        'menuContent' :{
+          templateUrl: "tmpl/new.html",
+          // controller: 'NewCtrl'
+        }
+      }
+    })
 
-    // .state('app.history', {
-    //   url: "/history",
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: "tmpl/history.html",
-    //       controller: 'HistoryCtrl',
-    //       resolve: {
-    //         Data: function(Rest) { /*return Rest.list();*/ var list = Rest.list(); console.log('listapp', list); return list; }
-    //       }
-    //     }
-    //   }
-    // })
-    // .state('app.historydetail', {
-    //   url: "/history/:id",
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: "tmpl/historydetail.html",
-    //       controller: 'HistoryDetailCtrl',
-    //       resolve: {
-    //         Gaz: function($stateParams, Rest) { return Rest.gaz($stateParams.id); }
-    //       }
-    //     }
-    //   }
-    // })
+    .state('app.history', {
+      url: "/history",
+      views: {
+        'menuContent' :{
+          templateUrl: "tmpl/history.html",
+          controller: 'HistoryCtrl',
+          resolve: {
+            Data: function(Rest) { /*return Rest.list();*/ var list = Rest.list(); console.log('listapp', list); return list; }
+          }
+        }
+      }
+    })
+    .state('app.historydetail', {
+      url: "/history/:id",
+      views: {
+        'menuContent' :{
+          templateUrl: "tmpl/historydetail.html",
+          controller: 'HistoryDetailCtrl',
+          resolve: {
+            Gaz: function($stateParams, Rest) { return Rest.gaz($stateParams.id); }
+          }
+        }
+      }
+    })
 
 
-    // .state('app.place', {
-    //   url: "/place",
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: "tmpl/place.html",
-    //       controller: 'PlaceCtrl',
-    //     }
-    //   }
-    // })
+    .state('app.place', {
+      url: "/place",
+      views: {
+        'menuContent' :{
+          templateUrl: "tmpl/place.html",
+          controller: 'PlaceCtrl',
+        }
+      }
+    })
 
-    // .state('app.settings', {
-    //   url: "/settings",
-    //   views: {
-    //     'menuContent' :{
-    //       templateUrl: "tmpl/settings.html",
-    //       controller: 'SettingsCtrl'
-    //     }
-    //   }
-    // });
+    .state('app.settings', {
+      url: "/settings",
+      views: {
+        'menuContent' :{
+          templateUrl: "tmpl/settings.html",
+          controller: 'SettingsCtrl'
+        }
+      }
+    });
 
   $urlRouterProvider.otherwise('/login');
 }]);

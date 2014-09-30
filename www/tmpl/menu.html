@@ -1,0 +1,36 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <!-- <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Tilbage</ion-nav-back-button> -->
+      <ion-nav-back-button class="button-icon ion-arrow-left-c"></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="nav-title-slide-ios7"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title"><i class="ion-beer" ng-if="user.isAdmin"></i>Hello {{user.name}}</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close href="#/app/new">
+          New
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/history">
+          History
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/settings">
+          Settings
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/place" ng-if="user.isAdmin">
+          Place
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/logout">
+          Log ud
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>
