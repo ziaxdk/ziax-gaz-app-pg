@@ -37,6 +37,7 @@ angular.module('ziaxgazapp', [
     }, false);
     alert('completed');
   });
+  return;
   $rootScope.user = User.get();
 
   // $rootScope.$on('$stateChangeError', function() {
