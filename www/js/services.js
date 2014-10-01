@@ -44,7 +44,7 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
     // return $http.post('http://host.ziax.dk:8081/api/appauth', { uid: uid, lastname: lastname });
   };
   this.stationsNear = function(lat, lon) {
-    alert(lat + ',' + lon);
+    // alert(lat + ',' + lon);
     return $http.post(_host + 'api/stations_near', { lat: lat, lon: lon });
   };
   this.store = function(gaz) {

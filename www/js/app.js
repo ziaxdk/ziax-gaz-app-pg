@@ -13,7 +13,7 @@ angular.module('ziaxgazapp', [
       fn();
     }
     catch(e) {
-      alert(e.message);
+      // alert(e.message);
       console.log('safe', e.message);
     }
   };
@@ -40,7 +40,7 @@ angular.module('ziaxgazapp', [
     document.addEventListener("backbutton", function () {
       console.log('backbutton');
     }, false);
-    alert('completed');
+    // alert('completed');
   });
   $rootScope.user = User.get();
 
