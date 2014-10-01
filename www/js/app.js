@@ -23,14 +23,8 @@ angular.module('ziaxgazapp', [
     safeFn(function() { navigator.vibrate(500); });
     safeFn(function() { StatusBar.overlaysWebView(true); StatusBar.styleDefault(); StatusBar.show(); });
 
-
-    // var watchId = navigator.geolocation.watchPosition(function(d) { alert('ok'); console.log(d);  },function(e) { console.log(e); }, { maximumAge: 1000, timeout: 60000, enableHighAccuracy: true });
-
-
     GPS.reset();
     GPS.startGps();
-    return;
-    console.log('ionicPlatform ready.');
     
     console.log('Using host', FINALS.host);
     
