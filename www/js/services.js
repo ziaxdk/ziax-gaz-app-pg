@@ -71,8 +71,8 @@ angular.module('ziaxgazapp.services', ['ziaxgazapp.constants'])
 
 .service('Hardware', [function() {
   this.vibrate = function(timeMs) {
-    alert(navigator);
-    alert(navigator.vibrate);
+    // alert(navigator);
+    // alert(navigator.vibrate);
     if (navigator && navigator.vibrate) {
       navigator.vibrate(200);
     } else {
